@@ -1,0 +1,15 @@
+*{box-sizing:border-box;font-family:Segoe UI,Arial,Helvetica,sans-serif}
+body{margin:0;padding:16px;background:#fafafa;color:#222}
+header{margin-bottom:16px}
+#search{width:100%;padding:8px;margin-top:8px}
+.card{background:#fff;border-radius:8px;padding:12px;margin:8px 0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.card h3{margin:0 0 8px}
+.card p{margin:0}
+.recipe-meta{font-size:0.9rem;color:#555;margin-top:8px}
+.rating{color:#e3a21a}
+.nutrition-info{background:#f5f5f5;padding:12px;margin:12px 0;border-radius:6px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.95rem}
+.nutrition-info div{border-left:3px solid #4CAF50;padding-left:8px}
+.note-box{background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin:12px 0;border-radius:6px;font-size:0.95rem}
+.comment{margin-top:12px}
+textarea,input[type=text]{width:100%;padding:8px;margin-top:6px}
+button{padding:8px 12px;margin-top:8px}
