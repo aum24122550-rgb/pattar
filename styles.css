@@ -38,7 +38,7 @@ header {
 button {
   background: #667eea;
   border: none;
-  padding: 10px 15px;
+  padding: 18px 35px;
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -48,4 +48,5 @@ button {
 button:hover {
   background: #5a67d8;
 }
+
 
