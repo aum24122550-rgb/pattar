@@ -57,6 +57,15 @@ input {
   border-radius: 10px;
   border: none;
 }
+#search {
+  width: 500px;
+  height: 50px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
 
 
 
