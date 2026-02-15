@@ -48,3 +48,22 @@ button {
 button:hover {
   background: #5a67d8;
 }
+#search {
+  padding: 16px 25px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: block;
+  margin: 20px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
