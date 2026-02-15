@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #333;
+  color: #ffffff;
 }
 
 header {
@@ -65,6 +65,7 @@ input {
   border-radius: 10px;
   border: none;
 }
+
 
 
 
