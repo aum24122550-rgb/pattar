@@ -1,55 +1,55 @@
-<!doctype html >
-< html lang = "th" > 
-< หัว>
-  < meta charset = "utf-8" > 
-  < meta name = "viewport" content = "width=device-width,initial-scale=1" >  
-  < title > เว็บแนะนำสูตรอาหาร - หน้าแรก</ title >
-  < link rel = "stylesheet" href = "styles.css" >  
-</head>​​
-< เนื้อหา>
-  < ส่วนหัว>
-    < h1 > เว็บแนะนำสูตรอาหารสำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต) </ h1 >
-    < p > รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</ p >
-    < input id = "search" placeholder = "ค้นหาสูตรหรือวัตถุดิบ..." />  
-  </header>​​
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>เว็บแนะนำสูตรอาหาร - หน้าแรก</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>เว็บแนะนำสูตรอาหาร สำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต)</h1>
+    <p>รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</p>
+    <input id="search" placeholder="ค้นหาสูตรหรือวัตถุดิบ..." />
+  </header>
 
-  < main id = " list " > </main> 
+  <main id="list"></main>
 
-  < script src = " script.js " > </script> 
-</body>​​
-</html>​​
+  <script src="script.js"></script>
+</body>
+</html>
 
 
-<!doctype html >
-< html lang = "th" > 
-< หัว>
-  < meta charset = "utf-8" > 
-  < meta name = "viewport" content = "width=device-width,initial-scale=1" >  
-  < title > เว็บแนะนำสูตรอาหาร - หน้าแรก</ title >
-  < link rel = "stylesheet" href = "styles.css" >  
-</head>​​
-< เนื้อหา>
-  < ส่วนหัว>
-    < nav class = "top-nav top-nav-corner" > 
-      < a href = "admin.html" > ผู้ดูแลระบบ</ a > 
-    </nav>​​
-    < h1 > เว็บแนะนำสูตรอาหารสำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต) </ h1 >
-    < p > รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</ p >
-    < div class = "filters" > 
-      < label for = "kidneyStage" > ควบคุมระยะไต: </ label > 
-      < select id = "kidneyStage" > 
-        < option value = "all" > ทุกระยะ (ก่อนฟอกไต) </ option > 
-        < ค่าตัวเลือก= "stage3" > ระยะที่ 3 </ ตัวเลือก> 
-        < ค่าตัวเลือก= "stage4" > ระยะที่ 4 </ ตัวเลือก> 
-        < option value = "stage5" > ระยะที่ 5 ก่อนที่จะฟอกไต</ option > 
-      </ เลือก>
-    </div>​​
-    < p id = "stageGuide" class = "stage-guide" > ทุกเมนูมองเห็นป้ายว่าเหมาะกับระยะไตใดๆ โดยที่ระบบควบคุม ฟอสฟอรัส และแคลเซียม</ p >  
-    < input id = "search" placeholder = "ค้นหาสูตรหรือวัตถุดิบ..." />  
-  </header>​​
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>เว็บแนะนำสูตรอาหาร - หน้าแรก</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="top-nav top-nav-corner">
+      <a href="admin.html">แอดมิน</a>
+    </nav>
+    <h1>เว็บแนะนำสูตรอาหาร สำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต)</h1>
+    <p>รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</p>
+    <div class="filters">
+      <label for="kidneyStage">เลือกระยะไต:</label>
+      <select id="kidneyStage">
+        <option value="all">ทุกระยะ (ก่อนฟอกไต)</option>
+        <option value="stage3">ระยะที่ 3</option>
+        <option value="stage4">ระยะที่ 4</option>
+        <option value="stage5">ระยะที่ 5 ก่อนฟอกไต</option>
+      </select>
+    </div>
+    <p id="stageGuide" class="stage-guide">ทุกเมนูจะแสดงป้ายว่าเหมาะกับระยะไตใด โดยคำนึงถึงโซเดียม โพแทสเซียม ฟอสฟอรัส และแคลเซียม</p>
+    <input id="search" placeholder="ค้นหาสูตรหรือวัตถุดิบ..." />
+  </header>
 
-  < main id = " list " > </main> 
+  <main id="list"></main>
 
-  < script src = " script.js " > </script> 
-</body>​​
+  <script src="script.js"></script>
+</body>
 </html>
