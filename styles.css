@@ -124,3 +124,58 @@ button:hover {
   border-color: #ffd59e;
   color: #8a5a20;
 }
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+
+.top-nav a {
+  background: white;
+  color: #8a2f5b;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.top-nav a[aria-current="page"] {
+  background: #8a2f5b;
+  color: white;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.admin-stat {
+  text-align: center;
+}
+
+.admin-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: #8a2f5b;
+  margin: 8px 0 0;
+}
+
+.admin-subtext {
+  color: #666;
+  margin-top: 0;
+}
+
+.popular-item {
+  border-top: 1px solid #f0d0df;
+  padding: 10px 0;
+}
+
+.popular-item a {
+  color: #8a2f5b;
+  text-decoration: none;
+  font-weight: 600;
+}

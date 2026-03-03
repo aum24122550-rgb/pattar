@@ -157,3 +157,56 @@ if(q('#recipe')){
     });
   })();
 }
+
+function getMemberCount(){
+  const candidateKeys = ['members', 'users', 'app-members'];
+  for(const key of candidateKeys){
+    try{
+      const raw = localStorage.getItem(key);
+      if(!raw) continue;
+      const parsed = JSON.parse(raw);
+      if(Array.isArray(parsed)) return parsed.length;
+      if(parsed && typeof parsed.count === 'number') return parsed.count;
+    }catch(e){
+      // ignore invalid data
+    }
+  }
+  return 0;
+}
+
+function getPopularRecipes(recipes){
+  const scored = recipes.map(r=>{
+    const comments = getStorageComments(r.id);
+    const reviewCount = comments.length;
+    const avg = reviewCount ? Number(averageRating(comments)) : 0;
+    return { ...r, reviewCount, avg };
+  });
+
+  return scored
+    .filter(r => r.reviewCount > 0)
+    .sort((a,b)=> b.reviewCount - a.reviewCount || b.avg - a.avg)
+    .slice(0,5);
+}
+
+if(q('#adminDashboard')){
+  (async()=>{
+    const recipes = await loadJSON();
+    q('#memberCount').innerText = String(getMemberCount());
+    q('#recipeCount').innerText = String(recipes.length);
+
+    const popular = getPopularRecipes(recipes);
+    const popularEl = q('#popularRecipes');
+
+    if(!popular.length){
+      popularEl.innerHTML = '<p>ยังไม่มีข้อมูลรีวิวสำหรับจัดอันดับ</p>';
+      return;
+    }
+
+    popularEl.innerHTML = popular.map((r,idx)=>`
+      <div class="popular-item">
+        <div>#${idx + 1} <a href="recipe.html?id=${r.id}">${r.title}</a></div>
+        <div>รีวิว: ${r.reviewCount} | คะแนนเฉลี่ย: ${r.avg.toFixed(1)}</div>
+      </div>
+    `).join('');
+  })();
+}
