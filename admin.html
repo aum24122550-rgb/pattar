@@ -1,7 +1,4 @@
-<!doctype html>
-<html lang="th">
-<head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>แอดมินแดชบอร์ด</title>
   <link rel="stylesheet" href="styles.css">
@@ -10,30 +7,44 @@
   <header>
     <h1>แอดมินแดชบอร์ด</h1>
     <p>สรุปจำนวนสมาชิก สูตรทั้งหมด และสูตรยอดนิยม</p>
-    <nav class="top-nav">
-      <a href="index.html">หน้าแรก</a>
+    <nav class="top-nav top-nav-split">
+      <a href="index.html">← กลับหน้าแรก</a>
       <a href="admin.html" aria-current="page">แอดมิน</a>
     </nav>
   </header>
 
-  <main id="adminDashboard" class="admin-grid">
-    <section class="card admin-stat">
-      <h3>จำนวนสมาชิก</h3>
-      <p id="memberCount" class="admin-number">-</p>
+  <main>
+    <section id="adminLoginWrap" class="card admin-login-card">
+      <h3>เข้าสู่ระบบแอดมิน</h3>
+      <form id="adminLoginForm" class="comment-layout">
+        <input id="adminUser" placeholder="ชื่อผู้ใช้" autocomplete="username" required />
+        <input id="adminPass" type="password" placeholder="รหัสผ่าน" autocomplete="current-password" required />
+        <button type="submit">เข้าสู่ระบบ</button>
+      </form>
+      <p id="loginError" class="login-error"></p>
     </section>
 
-    <section class="card admin-stat">
-      <h3>จำนวนสูตรทั้งหมด</h3>
-      <p id="recipeCount" class="admin-number">-</p>
-    </section>
+    <section id="adminDashboard" class="admin-grid" style="display:none;">
+      <section class="card admin-stat">
+        <h3>จำนวนสมาชิก</h3>
+        <p id="memberCount" class="admin-number">-</p>
+      </section>
 
-    <section class="card admin-popular">
-      <h3>สูตรยอดนิยม</h3>
-      <p class="admin-subtext">จัดอันดับจากจำนวนรีวิวและคะแนนเฉลี่ย</p>
-      <div id="popularRecipes"></div>
+      <section class="card admin-stat">
+        <h3>จำนวนสูตรทั้งหมด</h3>
+        <p id="recipeCount" class="admin-number">-</p>
+      </section>
+
+      <section class="card admin-popular">
+        <h3>สูตรยอดนิยม</h3>
+        <p class="admin-subtext">จัดอันดับจากจำนวนรีวิวและคะแนนเฉลี่ย</p>
+        <div id="popularRecipes"></div>
+      </section>
     </section>
   </main>
 
   <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
