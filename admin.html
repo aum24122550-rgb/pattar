@@ -1,51 +1,51 @@
-<!doctype html >
-< html lang = "th" > 
-< หัว>
-  < meta charset = "utf-8" > 
-  < meta name = "viewport" content = "width=device-width,initial-scale=1" >  
-  < title > ผู้ดูแลระบบ</ title >
-  < link rel = "stylesheet" href = "styles.css" >  
-</head>​​
-< เนื้อหา>
-  < ส่วนหัว>
-    < h1 > แอดมินดูแล</ h1 >
-    < p > ยังไงก็ตามจำนวนสมาชิกสูตรทั้งหมดและสูตรยอดนิยม</ p >
-    < nav class = "top-nav top-nav-split" > 
-      < a href = "index.html" > ←กลับหน้าแรก</ a > 
-      < a href = "admin.html" aria-current = "page" > ผู้ดูแลระบบ</ a >  
-    </nav>​​
-  </header>​​
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>แอดมินแดชบอร์ด</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>แอดมินแดชบอร์ด</h1>
+    <p>สรุปจำนวนสมาชิก สูตรทั้งหมด และสูตรยอดนิยม</p>
+    <nav class="top-nav top-nav-split">
+      <a href="index.html">← กลับหน้าแรก</a>
+      <a href="admin.html" aria-current="page">แอดมิน</a>
+    </nav>
+  </header>
 
-  < หลัก>
-    < section id = "adminLoginWrap" class = "card admin-login-card" >  
-      < h3 > เข้าสู่ระบบผู้ดูแลระบบ</ h3 >
-      < form id = "adminLoginForm" class = "comment-layout" >  
-        < input id = "adminUser" placeholder = "ผู้ดูแล" autocomplete = "username" required />    
-        < input id = "adminPass" type = "password" placeholder = "รหัสผ่าน" autocomplete = "current-password" required />     
-        < ประเภทปุ่ม= "ส่ง" > เข้าสู่ระบบ</ ปุ่ม> 
-      </ ฟอร์ม>
-      < p id = "loginError" class = "ข้อผิดพลาดในการเข้าสู่ระบบ" > </ p >  
-    </ ส่วน>
+  <main>
+    <section id="adminLoginWrap" class="card admin-login-card">
+      <h3>เข้าสู่ระบบแอดมิน</h3>
+      <form id="adminLoginForm" class="comment-layout">
+        <input id="adminUser" placeholder="ชื่อผู้ใช้" autocomplete="username" required />
+        <input id="adminPass" type="password" placeholder="รหัสผ่าน" autocomplete="current-password" required />
+        <button type="submit">เข้าสู่ระบบ</button>
+      </form>
+      <p id="loginError" class="login-error"></p>
+    </section>
 
-    < section id = "adminDashboard" class = "admin-grid" style = "display:none;" >   
-      < section class = "card admin-stat" > 
-        < h3 > จำนวนสมาชิก</ h3 >
-        < p id = "memberCount" class = " admin - number" > - </p>  
-      </ ส่วน>
+    <section id="adminDashboard" class="admin-grid" style="display:none;">
+      <section class="card admin-stat">
+        <h3>จำนวนสมาชิก</h3>
+        <p id="memberCount" class="admin-number">-</p>
+      </section>
 
-      < section class = "card admin-stat" > 
-        < h3 > จำนวนสูตรทั้งหมด</ h3 >
-        < p id = " recipeCount " class = "admin - number" > - </p>  
-      </ ส่วน>
+      <section class="card admin-stat">
+        <h3>จำนวนสูตรทั้งหมด</h3>
+        <p id="recipeCount" class="admin-number">-</p>
+      </section>
 
-      < section class = "card admin-popular" > 
-        < h3 > สูตรยอดนิยม</ h3 >
-        < p class = "admin-subtext" > เน้นจากจำนวนรีวิวและคะแนนเฉลี่ย</ p > 
-        < div id = " popularRecipes " > </div> 
-      </ ส่วน>
-    </ ส่วน>
-  </ main >
+      <section class="card admin-popular">
+        <h3>สูตรยอดนิยม</h3>
+        <p class="admin-subtext">จัดอันดับจากจำนวนรีวิวและคะแนนเฉลี่ย</p>
+        <div id="popularRecipes"></div>
+      </section>
+    </section>
+  </main>
 
-  < script src = " script.js " > </script> 
-</body>​​
+  <script src="script.js"></script>
+</body>
 </html>
