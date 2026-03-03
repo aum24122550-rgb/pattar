@@ -127,9 +127,18 @@ button:hover {
 
 .top-nav {
   display: flex;
-  justify-content: center;
   gap: 12px;
   margin: 12px 0 16px;
+}
+
+.top-nav-corner {
+  justify-content: flex-end;
+  margin: 0 0 8px;
+}
+
+.top-nav-split {
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-nav a {
@@ -275,6 +284,8 @@ button:hover {
 @media (max-width: 800px) {
   .recipe-hero h2 { font-size: 28px; }
   .recipe-grid { grid-template-columns: 1fr; }
+  .top-nav-split { justify-content: center; flex-wrap: wrap; }
+  .top-nav-corner { justify-content: center; }
 }
 
 .recipe-cover {
