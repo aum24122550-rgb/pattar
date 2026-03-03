@@ -30,8 +30,7 @@
       "potassium": 241,
       "phosphorus": 79,
       "calcium": 42
-    },
-    "image": "https://loremflickr.com/800/600/chicken,noodle,soup?lock=104"
+    }
   },
   {
     "id": "5",
@@ -65,8 +64,7 @@
       "potassium": 270.5,
       "phosphorus": 108.8,
       "calcium": 55
-    },
-    "image": "https://loremflickr.com/800/600/fish,rice,porridge?lock=105"
+    }
   },
   {
     "id": "6",
@@ -103,8 +101,7 @@
       "potassium": 448.6,
       "phosphorus": 169.4,
       "calcium": 140
-    },
-    "image": "https://loremflickr.com/800/600/tofu,soup,minced,pork?lock=106"
+    }
   },
   {
     "id": "7",
@@ -139,8 +136,7 @@
       "potassium": 136.7,
       "phosphorus": 59.2,
       "calcium": 38
-    },
-    "image": "https://loremflickr.com/800/600/stir-fry,chicken,bell-pepper?lock=107"
+    }
   },
   {
     "id": "8",
@@ -177,8 +173,7 @@
       "potassium": 251.3,
       "phosphorus": 88.6,
       "calcium": 60
-    },
-    "image": "https://loremflickr.com/800/600/tom-yum,shrimp,mushroom,soup?lock=108"
+    }
   },
   {
     "id": "9",
@@ -215,8 +210,7 @@
       "potassium": 424.4,
       "phosphorus": 127.5,
       "calcium": 48
-    },
-    "image": "https://loremflickr.com/800/600/fried-rice,vegetable?lock=109"
+    }
   },
   {
     "id": "10",
@@ -248,8 +242,7 @@
       "phosphorus": 150,
       "calcium": 120
     },
-    "targetStage": "stage3",
-    "image": "https://loremflickr.com/800/600/herb,roasted,chicken,rice?lock=110"
+    "targetStage": "stage3"
   },
   {
     "id": "11",
@@ -281,8 +274,7 @@
       "phosphorus": 115,
       "calcium": 95
     },
-    "targetStage": "stage4",
-    "image": "https://loremflickr.com/800/600/fish,porridge,winter-melon?lock=111"
+    "targetStage": "stage4"
   },
   {
     "id": "12",
@@ -314,8 +306,7 @@
       "phosphorus": 92,
       "calcium": 78
     },
-    "targetStage": "stage5",
-    "image": "https://loremflickr.com/800/600/stir-fried,glass-noodle,chicken?lock=112"
+    "targetStage": "stage5"
   },
   {
     "id": "13",
@@ -347,8 +338,7 @@
       "phosphorus": 145,
       "calcium": 110
     },
-    "targetStage": "stage3",
-    "image": "https://loremflickr.com/800/600/grilled-fish,brown-rice?lock=113"
+    "targetStage": "stage3"
   },
   {
     "id": "14",
@@ -379,8 +369,7 @@
       "phosphorus": 130,
       "calcium": 100
     },
-    "targetStage": "stage3",
-    "image": "https://loremflickr.com/800/600/cauliflower,white-sauce,pasta?lock=114"
+    "targetStage": "stage3"
   },
   {
     "id": "15",
@@ -411,8 +400,7 @@
       "phosphorus": 105,
       "calcium": 90
     },
-    "targetStage": "stage4",
-    "image": "https://loremflickr.com/800/600/steamed-egg-white,mushroom?lock=115"
+    "targetStage": "stage4"
   },
   {
     "id": "16",
@@ -443,8 +431,7 @@
       "phosphorus": 110,
       "calcium": 82
     },
-    "targetStage": "stage4",
-    "image": "https://loremflickr.com/800/600/clear,chicken,noodle,soup?lock=116"
+    "targetStage": "stage4"
   },
   {
     "id": "17",
@@ -475,8 +462,7 @@
       "phosphorus": 88,
       "calcium": 76
     },
-    "targetStage": "stage5",
-    "image": "https://loremflickr.com/800/600/steamed-fish,ginger,rice-porridge?lock=117"
+    "targetStage": "stage5"
   },
   {
     "id": "18",
@@ -507,7 +493,6 @@
       "phosphorus": 95,
       "calcium": 80
     },
-    "targetStage": "stage5",
-    "image": "https://loremflickr.com/800/600/stir-fried,rice-vermicelli,chicken?lock=118"
+    "targetStage": "stage5"
   }
 ]

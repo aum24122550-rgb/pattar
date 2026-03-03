@@ -76,7 +76,6 @@ function renderList(recipes){
       .join('');
 
     card.innerHTML=`
-      <img class="recipe-cover" src="${r.image||'images/recipe-default.svg'}" alt="${r.title}" loading="lazy" />
       <h3>${r.title}</h3>
       <p>${r.description||''}</p>
       <div class="stage-badge-wrap">${stageBadges || '<span class="stage-badge stage-badge-warning">ควรปรึกษานักกำหนดอาหาร</span>'}</div>
@@ -127,7 +126,6 @@ if(q('#recipe')){
     const el=document.createElement('article');
     el.className='card recipe-detail-card';
     el.innerHTML=`
-      <img class="recipe-detail-image" src="${r.image||'images/recipe-default.svg'}" alt="${r.title}" />
       <div class="recipe-hero">
         <h2>${r.title}</h2>
         <p class="recipe-desc">${r.description||''}</p>
