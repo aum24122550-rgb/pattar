@@ -229,6 +229,8 @@ async function initAdminDashboard(){
 }
 
 if(q('#adminLoginForm')){
+  sessionStorage.removeItem('admin-auth');
+
   const loginWrap = q('#adminLoginWrap');
   const dash = q('#adminDashboard');
   const errorEl = q('#loginError');
@@ -239,9 +241,6 @@ if(q('#adminLoginForm')){
     initAdminDashboard();
   }
 
-  if(sessionStorage.getItem('admin-auth') === 'ok'){
-    showDashboard();
-  }
 
   q('#adminLoginForm').addEventListener('submit',(e)=>{
     e.preventDefault();
