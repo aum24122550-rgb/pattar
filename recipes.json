@@ -30,7 +30,9 @@
       "potassium": 241,
       "phosphorus": 79,
       "calcium": 42
-    }
+    
+  },
+  "รูปภาพ": "images/IMG_4935.png"
   },
   {
     "id": "5",
@@ -496,6 +498,7 @@
     "targetStage": "stage5"
   }
 ]
+
 
 
 
