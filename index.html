@@ -3,53 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>เว็บแนะนำสูตรอาหาร - หน้าแรก</title>
+  <title>แอดมินแดชบอร์ด</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>เว็บแนะนำสูตรอาหาร สำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต)</h1>
-    <p>รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</p>
-    <input id="search" placeholder="ค้นหาสูตรหรือวัตถุดิบ..." />
-  </header>
-
-  <main id="list"></main>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!doctype html>
-<html lang="th">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>เว็บแนะนำสูตรอาหาร - หน้าแรก</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>เว็บแนะนำสูตรอาหาร สำหรับผู้ป่วยโรคไต </h1>
-    <p>รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</p>
-    <div class="filters">
-      <label for="kidneyStage">เลือกระยะไต:</label>
-      <select id="kidneyStage">
-        <option value="all">ทุกระยะ (ก่อนฟอกไต)</option>
-        <option value="stage3">ระยะที่ 3</option>
-        <option value="stage4">ระยะที่ 4</option>
-        <option value="stage5">ระยะที่ 5 ก่อนฟอกไต</option>
-      </select>
-    </div>
-    <p id="stageGuide" class="stage-guide">ทุกเมนูจะแสดงป้ายว่าเหมาะกับระยะไตใด โดยคำนึงถึงโซเดียม โพแทสเซียม ฟอสฟอรัส และแคลเซียม</p>
+    <h1>แอดมินแดชบอร์ด</h1>
+    <p>สรุปจำนวนสมาชิก สูตรทั้งหมด และสูตรยอดนิยม</p>
     <nav class="top-nav">
-      <a href="index.html" aria-current="page">หน้าแรก</a>
-      <a href="admin.html">แอดมิน</a>
+      <a href="index.html">หน้าแรก</a>
+      <a href="admin.html" aria-current="page">แอดมิน</a>
     </nav>
-    <input id="search" placeholder="ค้นหาสูตรหรือวัตถุดิบ..." />
   </header>
 
-  <main id="list"></main>
+  <main id="adminDashboard" class="admin-grid">
+    <section class="card admin-stat">
+      <h3>จำนวนสมาชิก</h3>
+      <p id="memberCount" class="admin-number">-</p>
+    </section>
+
+    <section class="card admin-stat">
+      <h3>จำนวนสูตรทั้งหมด</h3>
+      <p id="recipeCount" class="admin-number">-</p>
+    </section>
+
+    <section class="card admin-popular">
+      <h3>สูตรยอดนิยม</h3>
+      <p class="admin-subtext">จัดอันดับจากจำนวนรีวิวและคะแนนเฉลี่ย</p>
+      <div id="popularRecipes"></div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
