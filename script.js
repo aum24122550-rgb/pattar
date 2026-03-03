@@ -11,6 +11,32 @@ async function loadJSON(){
 
 function q(sel){return document.querySelector(sel)}
 
+
+function isAdminPage(){
+  return location.pathname.endsWith('/admin.html') || location.pathname.endsWith('admin.html');
+}
+
+function setupAdminEntryGuard(){
+  document.addEventListener('click',(event)=>{
+    const link = event.target.closest('a[href="admin.html"]');
+    if(!link || isAdminPage()) return;
+    sessionStorage.setItem('admin-entry','allowed');
+  });
+
+  if(!isAdminPage()) return;
+
+  const isAllowed = sessionStorage.getItem('admin-entry') === 'allowed';
+  if(!isAllowed){
+    location.replace('index.html');
+    return;
+  }
+
+  sessionStorage.removeItem('admin-entry');
+}
+
+setupAdminEntryGuard();
+
+
 function getStorageComments(id){try{return JSON.parse(localStorage.getItem('recipe-comments-'+id)||'[]')}catch(e){return[]}}
 function saveStorageComments(id,arr){localStorage.setItem('recipe-comments-'+id,JSON.stringify(arr))}
 function averageRating(arr){if(!arr.length) return 0;return (arr.reduce((s,a)=>s+(a.rating||0),0)/arr.length).toFixed(1)}
@@ -229,8 +255,6 @@ async function initAdminDashboard(){
 }
 
 if(q('#adminLoginForm')){
-  sessionStorage.removeItem('admin-auth');
-
   const loginWrap = q('#adminLoginWrap');
   const dash = q('#adminDashboard');
   const errorEl = q('#loginError');
@@ -248,7 +272,6 @@ if(q('#adminLoginForm')){
     const password = q('#adminPass').value;
 
     if(username === 'jusin888' && password === 'jusin888'){
-      sessionStorage.setItem('admin-auth','ok');
       errorEl.innerText='';
       showDashboard();
       return;
