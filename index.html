@@ -10,6 +10,16 @@
   <header>
     <h1>เว็บแนะนำสูตรอาหาร สำหรับผู้ป่วยโรคไต (ระยะก่อนฟอกไต)</h1>
     <p>รวมสูตรอาหารง่าย ๆ สำหรับทำที่บ้าน</p>
+    <div class="filters">
+      <label for="kidneyStage">เลือกระยะไต:</label>
+      <select id="kidneyStage">
+        <option value="all">ทุกระยะ (ก่อนฟอกไต)</option>
+        <option value="stage3">ระยะที่ 3</option>
+        <option value="stage4">ระยะที่ 4</option>
+        <option value="stage5">ระยะที่ 5 ก่อนฟอกไต</option>
+      </select>
+    </div>
+    <p id="stageGuide" class="stage-guide">ทุกเมนูจะแสดงป้ายว่าเหมาะกับระยะไตใด โดยคำนึงถึงโซเดียม โพแทสเซียม ฟอสฟอรัส และแคลเซียม</p>
     <input id="search" placeholder="ค้นหาสูตรหรือวัตถุดิบ..." />
   </header>
 
@@ -18,5 +28,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
