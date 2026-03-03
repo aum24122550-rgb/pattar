@@ -37,6 +37,27 @@ function setupAdminEntryGuard(){
 setupAdminEntryGuard();
 
 
+function normalizeHomeLayout(){
+  if(!q('#list')) return;
+
+  const headers = document.querySelectorAll('body > header');
+  if(headers.length > 1){
+    headers.forEach((header, idx)=>{
+      if(idx > 0) header.remove();
+    });
+  }
+
+  const topNavs = document.querySelectorAll('header .top-nav');
+  if(topNavs.length > 1){
+    topNavs.forEach((nav, idx)=>{
+      if(idx > 0) nav.remove();
+    });
+  }
+}
+
+normalizeHomeLayout();
+
+
 function getStorageComments(id){try{return JSON.parse(localStorage.getItem('recipe-comments-'+id)||'[]')}catch(e){return[]}}
 function saveStorageComments(id,arr){localStorage.setItem('recipe-comments-'+id,JSON.stringify(arr))}
 function averageRating(arr){if(!arr.length) return 0;return (arr.reduce((s,a)=>s+(a.rating||0),0)/arr.length).toFixed(1)}
