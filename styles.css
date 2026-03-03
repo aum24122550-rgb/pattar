@@ -11,10 +11,8 @@ body {
 }
 
 header {
-  position: relative;
   background: #ffb6d9;
   padding: 20px;
-  padding-top: 64px;
   text-align: center;
   border-radius: 12px;
   color: white;
@@ -68,9 +66,6 @@ header {
   gap: 20px;
 }
 
-body > header ~ header {
-  display: none !important;
-}
 
 .card {
   background: white;
@@ -137,18 +132,7 @@ button:hover {
   margin: 12px 0 16px;
 }
 
-.top-nav-corner {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  justify-content: flex-end;
-  margin: 0;
-}
 
-.top-nav-split {
-  justify-content: space-between;
-  align-items: center;
-}
 
 .top-nav a {
   background: white;
@@ -165,38 +149,11 @@ button:hover {
   color: white;
 }
 
-.admin-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
 
-.admin-stat {
-  text-align: center;
-}
 
-.admin-number {
-  font-size: 42px;
-  font-weight: 700;
-  color: #8a2f5b;
-  margin: 8px 0 0;
-}
 
-.admin-subtext {
-  color: #666;
-  margin-top: 0;
-}
 
-.popular-item {
-  border-top: 1px solid #f0d0df;
-  padding: 10px 0;
-}
 
-.popular-item a {
-  color: #8a2f5b;
-  text-decoration: none;
-  font-weight: 600;
-}
 
 #recipe {
   max-width: 980px;
@@ -293,26 +250,8 @@ button:hover {
 @media (max-width: 800px) {
   .recipe-hero h2 { font-size: 28px; }
   .recipe-grid { grid-template-columns: 1fr; }
-  .top-nav-split { justify-content: center; flex-wrap: wrap; }
-  .top-nav-corner {
-    position: static;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-  header {
-    padding-top: 20px;
-  }
 }
 
 
 
-.admin-login-card {
-  max-width: 460px;
-  margin: 0 auto 18px;
-}
 
-.login-error {
-  color: #b4234d;
-  font-size: 14px;
-  min-height: 20px;
-}
