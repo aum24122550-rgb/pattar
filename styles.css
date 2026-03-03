@@ -179,3 +179,100 @@ button:hover {
   text-decoration: none;
   font-weight: 600;
 }
+
+#recipe {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.recipe-detail-card {
+  border: 1px solid #f4d6e5;
+  box-shadow: 0 18px 40px rgba(168, 65, 121, 0.12);
+}
+
+.recipe-hero h2 {
+  margin: 0;
+  font-size: 34px;
+  color: #70284a;
+}
+
+.recipe-desc {
+  margin-top: 10px;
+  color: #5b4a53;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.recipe-section {
+  background: #fff7fb;
+  border: 1px solid #f7dfea;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.clean-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.note-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff4d9;
+  border: 1px solid #ffe0a1;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.nutrition-pill {
+  background: white;
+  border: 1px solid #f2d9e6;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.modern-comment {
+  margin-top: 18px;
+}
+
+.comment-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.comment-layout input,
+.comment-layout textarea,
+.comment-layout select {
+  border: 1px solid #e6c8d7;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+#commentsList {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.comment-card {
+  border-left: 4px solid #ff9fcd;
+}
+
+@media (max-width: 800px) {
+  .recipe-hero h2 { font-size: 28px; }
+  .recipe-grid { grid-template-columns: 1fr; }
+}

@@ -123,27 +123,46 @@ if(q('#recipe')){
     const comments=getStorageComments(id);
     const avg=averageRating(comments);
 
-    const el=document.createElement('div');el.className='card';
-    el.innerHTML=`<h2>${r.title}</h2>
-      <p>${r.description||''}</p>
-      <h4>วัตถุดิบ</h4>
-      <ul id="ingredientsList">${(r.ingredients||[]).map(i=>`<li>${i}</li>`).join('')}</ul>
-      <h4>วิธีทำ</h4>
-      <ol>${(r.steps||[]).map(s=>`<li>${s}</li>`).join('')}</ol>
-      ${r.note?`<div class="note-box"><strong>💡 ข้อแนะนำ:</strong> ${r.note}</div>`:''}
-      ${r.nutrition?`<h4>สารอาหาร</h4><div class="nutrition-info"><div>พลัง: ${Math.round(r.nutrition.calories)} kcal</div><div>โปรตีน: ${r.nutrition.protein.toFixed(1)} g</div><div>คาร์โบไฮเดต: ${r.nutrition.carbs.toFixed(1)} g</div><div>ไขมัน: ${r.nutrition.fat.toFixed(1)} g</div><div>โซเดียม: ${Math.round(r.nutrition.sodium)} mg</div>${r.nutrition.potassium?`<div>โพแทสเซียม: ${Math.round(r.nutrition.potassium)} mg</div>`:''}${r.nutrition.phosphorus?`<div>ฟอสฟอรัส: ${Math.round(r.nutrition.phosphorus)} mg</div>`:''}${r.nutrition.calcium?`<div>แคลเซียม: ${Math.round(r.nutrition.calcium)} mg</div>`:''}</div>`:''}
-      <div class="recipe-meta">คะแนนเฉลี่ย: <span class="rating">${avg}</span></div>
-      <div class="comment">
-        <h4>เพิ่มคอมเมนต์/ให้คะแนน</h4>
-        <input id="name" placeholder="ชื่อ (ไม่บังคับ)" />
-        <textarea id="msg" rows="3" placeholder="คอมเมนต์"></textarea>
-        <label>ให้คะแนน: <select id="rating"><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select></label>
-        <button id="send">ส่ง</button>
+    const el=document.createElement('article');
+    el.className='card recipe-detail-card';
+    el.innerHTML=`
+      <div class="recipe-hero">
+        <h2>${r.title}</h2>
+        <p class="recipe-desc">${r.description||''}</p>
       </div>
+
+      <div class="recipe-grid">
+        <section class="recipe-section">
+          <h4>วัตถุดิบ</h4>
+          <ul id="ingredientsList" class="clean-list">${(r.ingredients||[]).map(i=>`<li>${i}</li>`).join('')}</ul>
+        </section>
+
+        <section class="recipe-section">
+          <h4>วิธีทำ</h4>
+          <ol class="clean-list">${(r.steps||[]).map(s=>`<li>${s}</li>`).join('')}</ol>
+        </section>
+      </div>
+
+      ${r.note?`<div class="note-box"><strong>💡 ข้อแนะนำ:</strong> ${r.note}</div>`:''}
+
+      ${r.nutrition?`<section class="recipe-section"><h4>สารอาหาร</h4><div class="nutrition-grid"><div class="nutrition-pill">พลัง: ${Math.round(r.nutrition.calories)} kcal</div><div class="nutrition-pill">โปรตีน: ${r.nutrition.protein.toFixed(1)} g</div><div class="nutrition-pill">คาร์โบไฮเดต: ${r.nutrition.carbs.toFixed(1)} g</div><div class="nutrition-pill">ไขมัน: ${r.nutrition.fat.toFixed(1)} g</div><div class="nutrition-pill">โซเดียม: ${Math.round(r.nutrition.sodium)} mg</div>${r.nutrition.potassium?`<div class="nutrition-pill">โพแทสเซียม: ${Math.round(r.nutrition.potassium)} mg</div>`:''}${r.nutrition.phosphorus?`<div class="nutrition-pill">ฟอสฟอรัส: ${Math.round(r.nutrition.phosphorus)} mg</div>`:''}${r.nutrition.calcium?`<div class="nutrition-pill">แคลเซียม: ${Math.round(r.nutrition.calcium)} mg</div>`:''}</div></section>`:''}
+
+      <div class="recipe-meta">คะแนนเฉลี่ย: <span class="rating">${avg}</span></div>
+
+      <div class="comment modern-comment">
+        <h4>เพิ่มคอมเมนต์/ให้คะแนน</h4>
+        <div class="comment-layout">
+          <input id="name" placeholder="ชื่อ (ไม่บังคับ)" />
+          <textarea id="msg" rows="3" placeholder="คอมเมนต์"></textarea>
+          <label>ให้คะแนน: <select id="rating"><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select></label>
+          <button id="send">ส่ง</button>
+        </div>
+      </div>
+
       <div id="commentsList"></div>`;
     q('#recipe').appendChild(el);
 
-    function renderComments(){const list=q('#commentsList');list.innerHTML='';const arr=getStorageComments(id);if(!arr.length) list.innerHTML='<p>ยังไม่มีคอมเมนต์</p>';else{arr.slice().reverse().forEach(c=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<strong>${c.name||'ผู้ใช้'}</strong> <span class="recipe-meta">(${c.date})</span><div>ให้คะแนน: <span class="rating">${c.rating}</span></div><p>${c.comment}</p>`;list.appendChild(d)})}}
+    function renderComments(){const list=q('#commentsList');list.innerHTML='';const arr=getStorageComments(id);if(!arr.length) list.innerHTML='<p class="empty-text">ยังไม่มีคอมเมนต์</p>';else{arr.slice().reverse().forEach(c=>{const d=document.createElement('div');d.className='card comment-card';d.innerHTML=`<strong>${c.name||'ผู้ใช้'}</strong> <span class="recipe-meta">(${c.date})</span><div>ให้คะแนน: <span class="rating">${c.rating}</span></div><p>${c.comment}</p>`;list.appendChild(d)})}}
 
     renderComments();
     q('#send').addEventListener('click',()=>{
