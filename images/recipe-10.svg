@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#ffd1e8"/>
+<stop offset="100%" stop-color="#ffeecf"/>
+</linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<circle cx="980" cy="150" r="120" fill="#ffffff66"/>
+<circle cx="220" cy="640" r="180" fill="#ffffff55"/>
+<rect x="120" y="200" width="960" height="400" rx="28" fill="#ffffffcc" stroke="#f2aacd" stroke-width="4"/>
+<text x="600" y="320" font-size="46" text-anchor="middle" fill="#7a2b58" font-family="Segoe UI, Tahoma, sans-serif">เมนูสุขภาพผู้ป่วยโรคไต</text>
+<text x="600" y="390" font-size="34" text-anchor="middle" fill="#4c3a44" font-family="Segoe UI, Tahoma, sans-serif">ข้าวสวยกับไก่อบสมุนไพร (ระยะ 3)</text>
+<text x="600" y="460" font-size="26" text-anchor="middle" fill="#8b6478" font-family="Segoe UI, Tahoma, sans-serif">Recipe #10</text>
+</svg>

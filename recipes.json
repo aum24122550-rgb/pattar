@@ -30,7 +30,8 @@
       "potassium": 241,
       "phosphorus": 79,
       "calcium": 42
-    }
+    },
+    "image": "images/recipe-4.svg"
   },
   {
     "id": "5",
@@ -64,7 +65,8 @@
       "potassium": 270.5,
       "phosphorus": 108.8,
       "calcium": 55
-    }
+    },
+    "image": "images/recipe-5.svg"
   },
   {
     "id": "6",
@@ -101,7 +103,8 @@
       "potassium": 448.6,
       "phosphorus": 169.4,
       "calcium": 140
-    }
+    },
+    "image": "images/recipe-6.svg"
   },
   {
     "id": "7",
@@ -136,7 +139,8 @@
       "potassium": 136.7,
       "phosphorus": 59.2,
       "calcium": 38
-    }
+    },
+    "image": "images/recipe-7.svg"
   },
   {
     "id": "8",
@@ -173,7 +177,8 @@
       "potassium": 251.3,
       "phosphorus": 88.6,
       "calcium": 60
-    }
+    },
+    "image": "images/recipe-8.svg"
   },
   {
     "id": "9",
@@ -210,7 +215,8 @@
       "potassium": 424.4,
       "phosphorus": 127.5,
       "calcium": 48
-    }
+    },
+    "image": "images/recipe-9.svg"
   },
   {
     "id": "10",
@@ -242,7 +248,8 @@
       "phosphorus": 150,
       "calcium": 120
     },
-    "targetStage": "stage3"
+    "targetStage": "stage3",
+    "image": "images/recipe-10.svg"
   },
   {
     "id": "11",
@@ -274,7 +281,8 @@
       "phosphorus": 115,
       "calcium": 95
     },
-    "targetStage": "stage4"
+    "targetStage": "stage4",
+    "image": "images/recipe-11.svg"
   },
   {
     "id": "12",
@@ -306,7 +314,8 @@
       "phosphorus": 92,
       "calcium": 78
     },
-    "targetStage": "stage5"
+    "targetStage": "stage5",
+    "image": "images/recipe-12.svg"
   },
   {
     "id": "13",
@@ -338,7 +347,8 @@
       "phosphorus": 145,
       "calcium": 110
     },
-    "targetStage": "stage3"
+    "targetStage": "stage3",
+    "image": "images/recipe-13.svg"
   },
   {
     "id": "14",
@@ -369,7 +379,8 @@
       "phosphorus": 130,
       "calcium": 100
     },
-    "targetStage": "stage3"
+    "targetStage": "stage3",
+    "image": "images/recipe-14.svg"
   },
   {
     "id": "15",
@@ -400,7 +411,8 @@
       "phosphorus": 105,
       "calcium": 90
     },
-    "targetStage": "stage4"
+    "targetStage": "stage4",
+    "image": "images/recipe-15.svg"
   },
   {
     "id": "16",
@@ -431,7 +443,8 @@
       "phosphorus": 110,
       "calcium": 82
     },
-    "targetStage": "stage4"
+    "targetStage": "stage4",
+    "image": "images/recipe-16.svg"
   },
   {
     "id": "17",
@@ -462,7 +475,8 @@
       "phosphorus": 88,
       "calcium": 76
     },
-    "targetStage": "stage5"
+    "targetStage": "stage5",
+    "image": "images/recipe-17.svg"
   },
   {
     "id": "18",
@@ -493,6 +507,7 @@
       "phosphorus": 95,
       "calcium": 80
     },
-    "targetStage": "stage5"
+    "targetStage": "stage5",
+    "image": "images/recipe-18.svg"
   }
 ]

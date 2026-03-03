@@ -76,6 +76,7 @@ function renderList(recipes){
       .join('');
 
     card.innerHTML=`
+      <img class="recipe-cover" src="${r.image||'images/recipe-default.svg'}" alt="${r.title}" loading="lazy" />
       <h3>${r.title}</h3>
       <p>${r.description||''}</p>
       <div class="stage-badge-wrap">${stageBadges || '<span class="stage-badge stage-badge-warning">ควรปรึกษานักกำหนดอาหาร</span>'}</div>
@@ -126,6 +127,7 @@ if(q('#recipe')){
     const el=document.createElement('article');
     el.className='card recipe-detail-card';
     el.innerHTML=`
+      <img class="recipe-detail-image" src="${r.image||'images/recipe-default.svg'}" alt="${r.title}" />
       <div class="recipe-hero">
         <h2>${r.title}</h2>
         <p class="recipe-desc">${r.description||''}</p>
@@ -207,25 +209,54 @@ function getPopularRecipes(recipes){
     .slice(0,5);
 }
 
-if(q('#adminDashboard')){
-  (async()=>{
-    const recipes = await loadJSON();
-    q('#memberCount').innerText = String(getMemberCount());
-    q('#recipeCount').innerText = String(recipes.length);
+async function initAdminDashboard(){
+  const recipes = await loadJSON();
+  q('#memberCount').innerText = String(getMemberCount());
+  q('#recipeCount').innerText = String(recipes.length);
 
-    const popular = getPopularRecipes(recipes);
-    const popularEl = q('#popularRecipes');
+  const popular = getPopularRecipes(recipes);
+  const popularEl = q('#popularRecipes');
 
-    if(!popular.length){
-      popularEl.innerHTML = '<p>ยังไม่มีข้อมูลรีวิวสำหรับจัดอันดับ</p>';
+  if(!popular.length){
+    popularEl.innerHTML = '<p>ยังไม่มีข้อมูลรีวิวสำหรับจัดอันดับ</p>';
+    return;
+  }
+
+  popularEl.innerHTML = popular.map((r,idx)=>`
+    <div class="popular-item">
+      <div>#${idx + 1} <a href="recipe.html?id=${r.id}">${r.title}</a></div>
+      <div>รีวิว: ${r.reviewCount} | คะแนนเฉลี่ย: ${r.avg.toFixed(1)}</div>
+    </div>
+  `).join('');
+}
+
+if(q('#adminLoginForm')){
+  const loginWrap = q('#adminLoginWrap');
+  const dash = q('#adminDashboard');
+  const errorEl = q('#loginError');
+
+  function showDashboard(){
+    loginWrap.style.display='none';
+    dash.style.display='grid';
+    initAdminDashboard();
+  }
+
+  if(sessionStorage.getItem('admin-auth') === 'ok'){
+    showDashboard();
+  }
+
+  q('#adminLoginForm').addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const username = q('#adminUser').value.trim();
+    const password = q('#adminPass').value;
+
+    if(username === 'jusin888' && password === 'jusin888'){
+      sessionStorage.setItem('admin-auth','ok');
+      errorEl.innerText='';
+      showDashboard();
       return;
     }
 
-    popularEl.innerHTML = popular.map((r,idx)=>`
-      <div class="popular-item">
-        <div>#${idx + 1} <a href="recipe.html?id=${r.id}">${r.title}</a></div>
-        <div>รีวิว: ${r.reviewCount} | คะแนนเฉลี่ย: ${r.avg.toFixed(1)}</div>
-      </div>
-    `).join('');
-  })();
+    errorEl.innerText='ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+  });
 }
