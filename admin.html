@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>แอดมิน</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="top-nav top-nav-split">
+    <a href="index.html">← กลับหน้าแรก</a>
+  </nav>
+
+  <main class="admin-page">
+    <section id="adminLogin" class="card admin-login-card">
+      <h2>เข้าสู่ระบบแอดมิน</h2>
+      <label for="adminUser">ชื่อผู้ใช้</label>
+      <input id="adminUser" type="text" placeholder="กรอกชื่อผู้ใช้">
+
+      <label for="adminPass">รหัสผ่าน</label>
+      <input id="adminPass" type="password" placeholder="กรอกรหัสผ่าน">
+
+      <button id="adminLoginBtn" type="button">เข้าสู่ระบบ</button>
+      <p id="adminError" class="admin-error"></p>
+    </section>
+
+    <section id="adminDashboard" class="admin-dashboard" hidden>
+      <h2>แดชบอร์ดแอดมิน</h2>
+      <div class="admin-stats">
+        <article class="card admin-stat-card">
+          <h3>จำนวนสมาชิก</h3>
+          <p id="memberCount" class="admin-stat-number">0</p>
+        </article>
+        <article class="card admin-stat-card">
+          <h3>จำนวนสูตรทั้งหมด</h3>
+          <p id="recipeCount" class="admin-stat-number">0</p>
+        </article>
+      </div>
+
+      <section class="card admin-popular">
+        <h3>สูตรยอดนิยม</h3>
+        <ol id="popularRecipes"></ol>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
