@@ -11,6 +11,39 @@ async function loadJSON() {
 
 function q(sel) { return document.querySelector(sel); }
 
+
+function normalizeHomeLayout() {
+  if (!q('#list')) return;
+
+  const headers = Array.from(document.querySelectorAll('body > header'));
+  if (headers.length > 1) {
+    const preferred = headers.find((h) => h.querySelector('#kidneyStage')) || headers[0];
+    headers.forEach((h) => {
+      if (h !== preferred) h.remove();
+    });
+  }
+
+  const activeHeader = q('body > header');
+  if (!activeHeader) return;
+
+  const searches = Array.from(document.querySelectorAll('#search'));
+  searches.forEach((node, idx) => {
+    if (idx > 0 || node.closest('header') !== activeHeader) node.remove();
+  });
+
+  const filters = Array.from(activeHeader.querySelectorAll('.filters'));
+  filters.forEach((node, idx) => {
+    if (idx > 0) node.remove();
+  });
+
+  if (!activeHeader.querySelector('.top-nav-corner')) {
+    const nav = document.createElement('nav');
+    nav.className = 'top-nav-corner';
+    nav.innerHTML = '<a href="admin.html">แอดมิน</a>';
+    activeHeader.prepend(nav);
+  }
+}
+
 function getStorageComments(id) {
   try { return JSON.parse(localStorage.getItem(`recipe-comments-${id}`) || '[]'); }
   catch (e) { return []; }
@@ -287,6 +320,7 @@ function initAdminPage() {
   });
 }
 
+normalizeHomeLayout();
 initHomePage();
 initRecipePage();
 initAdminPage();
