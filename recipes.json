@@ -30,7 +30,7 @@
       "potassium": 241,
       "phosphorus": 79,
       "calcium": 42
-  {
+    }
   },
 
   {
@@ -497,6 +497,7 @@
     "targetStage": "stage5"
   }
 ]
+
 
 
 
